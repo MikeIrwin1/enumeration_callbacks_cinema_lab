@@ -27,4 +27,10 @@ Cinema.prototype.findByGenre = function (genre) {
   })
   return foundTitles;
 };
+
+Cinema.prototype.hasYear = function (year) {
+  const filmsYear = this.films.map(film => film.year);
+  const hasYear = filmsYear.includes(year);
+  return hasYear;
+};
 module.exports = Cinema;
