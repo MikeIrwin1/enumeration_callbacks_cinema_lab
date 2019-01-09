@@ -45,7 +45,7 @@ Cinema.prototype.totalRunTime = function () {
   const filmLength = this.films.map(film => film.length);
   let total = filmLength.reduce((runningTotal, number) => {
     return runningTotal + number;
-  })
+  },0);
   return total;
 };
 module.exports = Cinema;
