@@ -36,19 +36,15 @@ Cinema.prototype.hasYear = function (year) {
 
 Cinema.prototype.filmDuration = function (duration) {
   const filmLength = this.films.map(film => film.length);
-  let result;
-  filmLength.forEach(film => {
-    if (film > duration){
-      result = true;
-    }
+  return filmLength.every((film) => {
+    return film > duration
   });
-  return result;
 };
 
 Cinema.prototype.totalRunTime = function () {
   const filmLength = this.films.map(film => film.length);
   let total = filmLength.reduce((runningTotal, number) => {
-    return runningTotal + number
+    return runningTotal + number;
   })
   return total;
 };
