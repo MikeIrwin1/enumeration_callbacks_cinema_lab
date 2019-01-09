@@ -33,4 +33,15 @@ Cinema.prototype.hasYear = function (year) {
   const hasYear = filmsYear.includes(year);
   return hasYear;
 };
+
+Cinema.prototype.filmDuration = function (duration) {
+  const filmLength = this.films.map(film => film.length);
+  let result;
+  filmLength.forEach(film => {
+    if (film > duration){
+      result = true;
+    }
+  });
+  return result;
+};
 module.exports = Cinema;
