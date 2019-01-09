@@ -11,9 +11,13 @@ Cinema.prototype.filmTitles = function () {
 };
 
 Cinema.prototype.findByTitle = function (title) {
-  const foundTitle = this.films.filter((film) => {
+  // const foundTitle = this.films.filter((film) => {
+  //   return film.title === title;
+  // })
+  // return foundTitle[0];
+  const foundTitle = this.films.find((film) => {
     return film.title === title;
   })
-  return foundTitle[0];
+  return foundTitle;
 };
 module.exports = Cinema;
